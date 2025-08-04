@@ -46,6 +46,34 @@ while True:
 
 ### Actividad 02 🐧  
 
+Código del semáforo:  
+``` python
+# Imports go at the top
+from microbit import *
+
+estado = "verde"
+
+# Code in a 'while True:' loop repeats forever
+while True:
+    if estado == "verde":
+        display.clear()
+        display.set_pixel(2, 4, 9)
+        sleep(3000)
+        estado = "amarillo"  
+    elif estado == "rojo":
+        display.clear()
+        display.set_pixel(2, 0, 9)
+        sleep(3000)
+        estado = "verde"
+    elif estado == "amarillo":  
+        display.clear()
+        display.set_pixel(2, 2, 9)
+        sleep(1000)
+        estado = "rojo"
+```
+En este código, se pueden observar los estados **Rojo**, **Amarillo** y **Verde**, correspondientes a los tres estados que tiene un semáforo.  
+Los eventos que esperan estos estados son simplemente el paso del tiempo, que hace que las luces brillen en su posición durante solo un momento, antes de cambiar al siguiente estado.  
+Las acciones en este código son los cambios de estado en tres de los LEDs del micro:bit, que alumbrarán o se apagarán dependiendo del estado en el que el programa se encuentre.  
 
 ### Actividad 03 🐧
 Código (El que hicimos en clase no me funcionó, entonces me baso en el de la página del curso): 
@@ -111,9 +139,13 @@ while True:
             interval = HAPPY_INTERVAL
             current_state = STATE_HAPPY
 ```
-1. x
+1. El programa simula tareas concurrentes porque es capaz de manejar **simultáneamente** los eventos (el tiempo, en este caso), y las acciones al cambiar su estado, permitiendo respuestas del programa **sin detenerse**.
 2. - **Estados**: Happy, Smile y Sad.
    - **Eventos**: Paso del tiempo, presionar el boton **A**.
    - **Acciones**: Mostrar un dibujo distinto dependiendo del estado en el que se encuentra el programa.
+3. **Vectores de prueba**:  
+       - El estado `Init` pasa directo al estado `Happy`, y muestra el dibujo correspondiente. ✔️  
+       - En el estado `Happy`, cuando se presiona el botón **A**, pasa al estado `Sad` y muestra el dibujo correspondiente. ✔️  
+       - En el estado `Smile`, si no se presiona el botón **A**, el programa dejará que pase el tiempo, y cambiará su estado y el dibujo a `Sad`. ✔️  
 
 
