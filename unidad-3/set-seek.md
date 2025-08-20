@@ -130,8 +130,12 @@ while True:
     tareaBomba.update()
 ```
 
+<img width="3525" height="3114" alt="Bomba 3 0" src="https://github.com/user-attachments/assets/549bba77-f385-4076-a04b-2dca59182900" />
+
+
 2. 
 <img width="670" height="635" alt="image" src="https://github.com/user-attachments/assets/18ebd439-6a66-40b7-82d0-148cb8e51f43" />
+
 
 
 
