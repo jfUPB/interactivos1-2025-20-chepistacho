@@ -2,3 +2,130 @@
 
 ## 🔎 Fase: Set + Seek
 
+### Actividad 05  
+1. .
+``` c++
+
+from microbit import *
+import utime
+
+display.clear()
+
+class Evento:
+    def __init__(self):
+        self.valor = 0
+    def poner(self, nuevo):
+        self.valor = nuevo
+    def limpiar(self):
+        self.valor = 0
+    def leer(self):
+        return self.valor
+
+class TareaSerial:
+    def __init__(self):
+        uart.init(baudrate=115200)
+    def update(self):
+        if uart.any():
+            dato = uart.read(1)
+            if dato:
+                if dato[0] == ord('A'):
+                    evento.poner('A')
+                elif dato[0] == ord('B'):
+                    evento.poner('B')
+                elif dato[0] == ord('S'):
+                    evento.poner('S')
+                elif dato[0] == ord('T'):
+                    evento.poner('T')
+
+
+class TareaBotones:
+    def __init__(self):
+        pass
+    def update(self):
+        if button_a.was_pressed():
+            evento.poner('A')
+        elif button_b.was_pressed():
+            evento.poner('B')
+        elif accelerometer.was_gesture('shake'):
+            evento.poner('S')
+        elif pin_logo.is_touched():
+            evento.poner('T')
+
+
+class TareaBomba:
+    def __init__(self):
+        self.CLAVE = ['A','B','A']
+        self.intentos = [''] * len(self.CLAVE)
+        self.posClave = 0
+        self.tiempo = 20
+        self.inicio = utime.ticks_ms()
+        self.estado = 'CONFIG'
+        display.clear()
+        display.show(self.tiempo, wait=False)
+
+    def update(self):
+        if self.estado == 'CONFIG':
+            if evento.leer() == 'A':
+                evento.limpiar()
+                self.tiempo = min(self.tiempo + 1, 60)
+                display.show(self.tiempo, wait=False)
+            if evento.leer() == 'B':
+                evento.limpiar()
+                self.tiempo = max(10, self.tiempo - 1)
+                display.show(self.tiempo, wait=False)
+            if evento.leer() == 'S':
+                evento.limpiar()
+                self.inicio = utime.ticks_ms()
+                self.estado = 'ARMADA'
+
+        elif self.estado == 'ARMADA':
+            if utime.ticks_diff(utime.ticks_ms(), self.inicio) > 1000:
+                self.inicio = utime.ticks_ms()
+                self.tiempo -= 1
+                display.show(self.tiempo, wait=False)
+                if self.tiempo == 0:
+                    display.show(Image.SKULL)
+                    self.estado = 'EXPLOTO'
+            if evento.leer() == 'A':
+                evento.limpiar()
+                self.intentos[self.posClave] = 'A'
+                self.posClave += 1
+            if evento.leer() == 'B':
+                evento.limpiar()
+                self.intentos[self.posClave] = 'B'
+                self.posClave += 1
+            if self.posClave == len(self.intentos):
+                correcta = True
+                for i in range(len(self.intentos)):
+                    if self.intentos[i] != self.CLAVE[i]:
+                        correcta = False
+                        break
+                if correcta:
+                    self.tiempo = 20
+                    display.show(self.tiempo, wait=False)
+                    self.posClave = 0
+                    self.estado = 'CONFIG'
+                else:
+                    self.posClave = 0
+
+        elif self.estado == 'EXPLOTO':
+            if evento.leer() == 'T':
+                evento.limpiar()
+                self.tiempo = 20
+                display.show(self.tiempo, wait=False)
+                self.inicio = utime.ticks_ms()
+                self.estado = 'CONFIG'
+
+
+tareaBomba = TareaBomba()
+tareaSerial = TareaSerial()
+tareaBotones = TareaBotones()
+evento = Evento()
+
+while True:
+    tareaSerial.update()
+    tareaBotones.update()
+    tareaBomba.update()
+```
+
+2. 
