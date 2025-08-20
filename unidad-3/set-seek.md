@@ -14,9 +14,9 @@ display.clear()
 class Evento:
     def __init__(self):
         self.valor = 0
-    def poner(self, nuevo):
+    def set(self, nuevo):
         self.valor = nuevo
-    def limpiar(self):
+    def clear(self):
         self.valor = 0
     def leer(self):
         return self.valor
@@ -29,13 +29,13 @@ class TareaSerial:
             dato = uart.read(1)
             if dato:
                 if dato[0] == ord('A'):
-                    evento.poner('A')
+                    evento.set('A')
                 elif dato[0] == ord('B'):
-                    evento.poner('B')
+                    evento.set('B')
                 elif dato[0] == ord('S'):
-                    evento.poner('S')
+                    evento.set('S')
                 elif dato[0] == ord('T'):
-                    evento.poner('T')
+                    evento.set('T')
 
 
 class TareaBotones:
@@ -43,13 +43,13 @@ class TareaBotones:
         pass
     def update(self):
         if button_a.was_pressed():
-            evento.poner('A')
+            evento.set('A')
         elif button_b.was_pressed():
-            evento.poner('B')
+            evento.set('B')
         elif accelerometer.was_gesture('shake'):
-            evento.poner('S')
+            evento.set('S')
         elif pin_logo.is_touched():
-            evento.poner('T')
+            evento.set('T')
 
 
 class TareaBomba:
@@ -66,15 +66,15 @@ class TareaBomba:
     def update(self):
         if self.estado == 'CONFIG':
             if evento.leer() == 'A':
-                evento.limpiar()
+                evento.clear()
                 self.tiempo = min(self.tiempo + 1, 60)
                 display.show(self.tiempo, wait=False)
             if evento.leer() == 'B':
-                evento.limpiar()
+                evento.clear()
                 self.tiempo = max(10, self.tiempo - 1)
                 display.show(self.tiempo, wait=False)
             if evento.leer() == 'S':
-                evento.limpiar()
+                evento.clear()
                 self.inicio = utime.ticks_ms()
                 self.estado = 'ARMADA'
 
@@ -87,11 +87,11 @@ class TareaBomba:
                     display.show(Image.SKULL)
                     self.estado = 'EXPLOTO'
             if evento.leer() == 'A':
-                evento.limpiar()
+                evento.clear()
                 self.intentos[self.posClave] = 'A'
                 self.posClave += 1
             if evento.leer() == 'B':
-                evento.limpiar()
+                evento.clear()
                 self.intentos[self.posClave] = 'B'
                 self.posClave += 1
             if self.posClave == len(self.intentos):
@@ -110,7 +110,7 @@ class TareaBomba:
 
         elif self.estado == 'EXPLOTO':
             if evento.leer() == 'T':
-                evento.limpiar()
+                evento.clear()
                 self.tiempo = 20
                 display.show(self.tiempo, wait=False)
                 self.inicio = utime.ticks_ms()
@@ -129,3 +129,4 @@ while True:
 ```
 
 2. 
+
