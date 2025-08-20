@@ -8,6 +8,7 @@
 
 from microbit import *
 import utime
+import music
 
 display.clear()
 
@@ -84,8 +85,9 @@ class TareaBomba:
                 self.tiempo -= 1
                 display.show(self.tiempo, wait=False)
                 if self.tiempo == 0:
+                    music.play(music.FUNERAL)
                     display.show(Image.SKULL)
-                    self.estado = 'EXPLOTO'
+                    self.estado = 'BOOM'
             if evento.leer() == 'A':
                 evento.clear()
                 self.intentos[self.posClave] = 'A'
@@ -108,7 +110,7 @@ class TareaBomba:
                 else:
                     self.posClave = 0
 
-        elif self.estado == 'EXPLOTO':
+        elif self.estado == 'BOOM':
             if evento.leer() == 'T':
                 evento.clear()
                 self.tiempo = 20
@@ -129,4 +131,5 @@ while True:
 ```
 
 2. 
+
 
