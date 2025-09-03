@@ -229,9 +229,10 @@ function connectBtnClick() {
 [Video demostratativo](https://www.youtube.com/watch?v=4Z5-cDs31q0)
 
 
-Disclaimer:  
+## Disclaimer:  
 Las variables son distintas a las del profe porque lo intenté hacer usando IA, pero luego me dí cuenta de que el código del profe era más sencillo que lo que me proporcionaba GPT, entonces dejé las variables como las tenía y las puse en ese código. Si hay algún pedazo de código que no sirve para nada, seguramente me faltó borrarlo de cuando lo hice con inteligencia artificial.  
 Por lo mismo (creo yo), pasa que el código se detiene después de unos segundos de uso. Eso no se alcanza a apreciar en el video porque estuve de buenas, pero sí me pasó un par de veces mientras lo probaba.
+
 
 
 
