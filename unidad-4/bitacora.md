@@ -88,10 +88,145 @@ Código modificado:
 
 ``` js
 
+'use strict';
+
+var tileCountX = 2;
+var tileCountY = 10;
+
+let port;
+let connectBtn;
+let connectionInitialized = false;
+let microBitConnected = false;
+var accelX = 0;
+var accelY = 0;
+var buttonA = 0;
+var buttonB = 0;
+var newAState = 0;
+var newBState = 0;
+let prevA = false;
+let prevB= false;
+
+
+var colorsLeft = [];
+var colorsRight = [];
+var colors = [];
+
+var interpolateShortest = true;
+
+function setup() {
+  createCanvas(800, 800);
+  colorMode(HSB);
+  noStroke();
+  shakeColors();
+  port = createSerial();
+  connectBtn = createButton('Connect to micro:bit');
+  connectBtn.position(80, 300);
+  connectBtn.mousePressed(connectBtnClick);
+
+  
+}
+
+function draw() {
+  
+if (!port.opened()) {
+    connectBtn.html("Connect to micro:bit");
+    microBitConnected = false;
+  } else {
+    microBitConnected = true;
+    connectBtn.html("Disconnect");
+
+    if (port.opened() && !connectionInitialized) {
+      port.clear();
+      connectionInitialized = true;
+    }
+
+    if (port.availableBytes() > 0) {
+      let data = port.readUntil("\n");
+      if (data) {
+        data = data.trim();
+        let values = data.split(",");
+        if (values.length == 4) {
+          accelX = int(values[0]) + windowWidth / 2;
+          accelY = int(values[1]) + windowHeight / 2;
+          buttonA = values[2].toLowerCase() === "true";
+          buttonB = values[3].toLowerCase() === "true";
+          updateButtonStates(buttonA, buttonB);
+        } else {
+          print("No se están recibiendo 4 datos del micro:bit");
+        }
+      }
+    }
+  }
+  
+  tileCountX = int(map(accelX, 0, width, 2, 100));
+  tileCountY = int(map(accelY, 0, height, 2, 10));
+  var tileWidth = width / tileCountX;
+  var tileHeight = height / tileCountY;
+  var interCol;
+  colors = [];
+
+  for (var gridY = 0; gridY < tileCountY; gridY++) {
+    var col1 = colorsLeft[gridY];
+    var col2 = colorsRight[gridY];
+
+    for (var gridX = 0; gridX < tileCountX; gridX++) {
+      var amount = map(gridX, 0, tileCountX - 1, 0, 1);
+
+      if (interpolateShortest) {
+        // switch to rgb
+        colorMode(RGB);
+        interCol = lerpColor(col1, col2, amount);
+        // switch back
+        colorMode(HSB);
+      } else {
+        interCol = lerpColor(col1, col2, amount);
+      }
+
+      fill(interCol);
+
+      var posX = tileWidth * gridX;
+      var posY = tileHeight * gridY;
+      rect(posX, posY, tileWidth, tileHeight);
+
+      // save color for potential ase export
+      colors.push(interCol);
+    }
+  }
+}
+
+function updateButtonStates(buttonA, buttonB) {
+  if (buttonA){
+    shakeColors();
+  }
+  if (buttonB){
+    interpolateShortest = !interpolateShortest;
+  }
+}
+
+function shakeColors() {
+  for (var i = 0; i < tileCountY; i++) {
+    colorsLeft[i] = color(random(0, 60), random(0, 100), 100);
+    colorsRight[i] = color(random(160, 190), 100, random(0, 100));
+  }
+}
+
+
+
+
+function connectBtnClick() {
+    if (!port.opened()) {
+        port.open('MicroPython', 115200);
+    } else {
+        port.close();
+    }
+}
+
+
 ```
 
 ## Video
 
 [Video demostratativo](URL)
+
 
 
