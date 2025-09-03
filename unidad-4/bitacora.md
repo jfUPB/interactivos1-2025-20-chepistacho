@@ -82,7 +82,7 @@ function keyPressed() {
 
 ```
 
-[Enlace a la aplicación modificada](URL)
+[Enlace a la aplicación modificada](https://editor.p5js.org/chepistacho/sketches/LqdybkkR9)
 
 Código modificado:
 
@@ -226,7 +226,8 @@ function connectBtnClick() {
 
 ## Video
 
-[Video demostratativo](URL)
+[Video demostratativo](https://www.youtube.com/watch?v=4Z5-cDs31q0)
+
 
 
 
