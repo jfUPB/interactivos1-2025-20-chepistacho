@@ -35,9 +35,26 @@ if (microBitAState === true) {
 - **Capturas de pantalla de los algunos dibujos que hayas hecho con el sketch.**: <img width="1370" height="1238" alt="image" src="https://github.com/user-attachments/assets/a0d3a83b-4ce2-48cd-ad6e-e0b8237c5cf1" />
 
 ## Actividad 02 🐧 
+🧐🧪✍️ La primera vez que capturé el resultado, me había tirado un resultado normal, pero ahora me tira esto <img width="1007" height="211" alt="image" src="https://github.com/user-attachments/assets/f939dd45-9234-4f7e-bbea-1fb1fd812bdb" /> (no sé por qué pasa esto).
+
+🧐🧪✍️ Con todo en HEX sí me tira algo normal, similar a lo que me había tirado la última vez que lo había intentado (culpa mía por no haberlo capturado en su momento). <img width="965" height="196" alt="image" src="https://github.com/user-attachments/assets/797bb55c-a8c5-4817-982f-b85fc2864b4e" />.  
+Me imagino que se relaciona con la línea de código debido a que está mandando un paquete de datos
+
+🧐🧪✍️ Siento que la ventaja con respecto al texto en ASCII es que ahora se puede saber cómo el computador está leyendo la info.
+
+Por motivos que desconozco, el Serial Terminal no siguió funcionando.
+
 
 
 ## Actividad 03 🐧
+
+La primera versión funcionaba muy raro (empezaba a pintar cuando presionaba la A en alguna otra pestaña y volvía a p5), y no respondía al micro:bit 😢  
+<img width="738" height="691" alt="image" src="https://github.com/user-attachments/assets/6bb64a66-432b-486b-b684-56497efc5162" />  
+Es como si el PC no reconociera el micro:bit, por más que ya está conectado (el serial terminal tampoco reacciona a los cambios que hago en el micro:bit)  
+
+La segunda versión me tiró un error, pero la tercera sí me funcionó
+
+
 
 
 
