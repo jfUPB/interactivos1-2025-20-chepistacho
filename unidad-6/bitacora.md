@@ -20,6 +20,10 @@
 ## Actividad 2 🐧  
 
 - **¿Qué es Internet?**: En mi día a día uso internet casi todo el tiempo. Si se cortara esa "rampa", quedo embalado para prácticamente todo, desde la comunicación con mi familia, el tiempo de ocio en redes sociales y la realización de trabajos de la U (No podría estar haciendo esta bitácora, por ejemplo).
-- **Navegador y servidor**: 
+- **Navegador y servidor**: Yo creo que el servicio cliente-servidor más evidente que hay en mi día a día es a la hora de pedir café en las máquinas expendedoras, donde, idealmente, el cliente (yo) pide café y el servidor (la máquina) lo entrega (normalmente me sirve agua caliente).
+- **¿Qué es una URL?**: Mi página favorita es el MarketPlace de Facebook, y la URL es `https://www.facebook.com/marketplace/`. El protocolo es el `https://` de toda la vida, el dominio es `www.facebook.com`, y la ruta específica es `/marketplace/`. Sin la ruta específica, me manda a la página de inicio de Facebook.
+- **Protocolo HTTP**: Me imagino que el cambio en la comlejidad de los protocolos radica en que ahora no se trata de enviar señales concretas por medio de un cable, sino que se debe localizar la información en un servidor, para mandarla a un cliente en el momento en el que lo pida.
+- 
+
 
 
