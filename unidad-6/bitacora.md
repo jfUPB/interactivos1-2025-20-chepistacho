@@ -23,7 +23,42 @@
 - **Navegador y servidor**: Yo creo que el servicio cliente-servidor más evidente que hay en mi día a día es a la hora de pedir café en las máquinas expendedoras, donde, idealmente, el cliente (yo) pide café y el servidor (la máquina) lo entrega (normalmente me sirve agua caliente).
 - **¿Qué es una URL?**: Mi página favorita es el MarketPlace de Facebook, y la URL es `https://www.facebook.com/marketplace/`. El protocolo es el `https://` de toda la vida, el dominio es `www.facebook.com`, y la ruta específica es `/marketplace/`. Sin la ruta específica, me manda a la página de inicio de Facebook.
 - **Protocolo HTTP**: Me imagino que el cambio en la comlejidad de los protocolos radica en que ahora no se trata de enviar señales concretas por medio de un cable, sino que se debe localizar la información en un servidor, para mandarla a un cliente en el momento en el que lo pida.
-- 
+- x
+
+## Actividad 3 🐧
+### 🧐🧪✍️ Experimento 1
+Cuando cambié la ruta, ya no permite acceder al link original, pues muestra un mensaje de error, pero cuando pusimos `http://localhost:3000/pagina_uno`, ahí sí abrió, mostrando la misma página que antes mostraba el link original.  
+<img width="132" height="26" alt="image" src="https://github.com/user-attachments/assets/23cd6315-a495-4829-adbf-d7845a948690" />  
+(Mensaje de error)  
+
+Esto indica que esa misma línea de código es la que reconoce la ruta específica en la que debe mostrar la página, es decir, si esa parte del código dijera `fisicos1`, la URL para acceder sería `http://localhost:3000/fisicos1`.
+
+### 🧐🧪✍️ Experimento 2
+Al iniciar la primera página, sale lo siguiente:  
+``` js
+Server is listening on http://localhost:3000
+A user connected - ID: X2RQlWev7Xz5IjAHAAAB
+Received win1update from ID: X2RQlWev7Xz5IjAHAAAB Data: { x: 352, y: 333, width: 537, height: 275 }
+Debug - Connected clients: 1, Page1: 1, Page2: 0, Synced: 0
+Sync status: pages=false, synced=false, clients=1
+Debug - Connected clients: 1, Page1: 1, Page2: 0, Synced: 1
+Sync status: pages=false, synced=true, clients=1
+
+```
+Al abrir la segunda, tira el mismo ID, así como cuando cerré solo la primera página, pero cuando cerré ambas, cambió el ID .
+
+### 🧐🧪✍️ Experimento 3
+Básicamente, lo que muestra son los cambios de tamaño y posición de cada página, indicándolo con su respectivo ID.
+Cuando cambio el código a `socket.emit(‘getdata’, page1)`, las ventanas dejan de estar sincronizadas, me imagino que porque el `broadcast` es el que "transmite" la info entre las dos páginas, mieentras que, sin el `broadcast`, se envía la info al mismo cliente que lo emitió.
+
+### 🧐🧪✍️ Experimento 4
+Entonces, básicamente, el localhost indica el número de puerto que estará escuchando el código, por lo que debe de coincidir del del server.js con el de la URL.
+
+
+
+
+
+
 
 
 
