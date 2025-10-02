@@ -54,6 +54,17 @@ Cuando cambio el código a `socket.emit(‘getdata’, page1)`, las ventanas dej
 ### 🧐🧪✍️ Experimento 4
 Entonces, básicamente, el localhost indica el número de puerto que estará escuchando el código, por lo que debe de coincidir del del server.js con el de la URL.
 
+## Actividad 4 🐧
+## 🧐🧪✍️ Experimeto 1
+Efectivamente, tira un error relaconado con la conexión, específicamente este:  
+<img width="498" height="45" alt="image" src="https://github.com/user-attachments/assets/581ce46f-782c-452f-ab5b-2d47ab3f74fc" />  
+Y, cuando vuelvo a correr el servidor, dejan de aparecer los errores.
+
+## 🧐🧪✍️ Experimeto 2
+
+
+
+
 
 
 
