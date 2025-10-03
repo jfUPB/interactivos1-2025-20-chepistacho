@@ -55,21 +55,22 @@ Cuando cambio el código a `socket.emit(‘getdata’, page1)`, las ventanas dej
 Entonces, básicamente, el localhost indica el número de puerto que estará escuchando el código, por lo que debe de coincidir del del server.js con el de la URL.
 
 ## Actividad 4 🐧
-## 🧐🧪✍️ Experimeto 1
+### 🧐🧪✍️ Experimeto 1
 Efectivamente, tira un error relaconado con la conexión, específicamente este:  
 <img width="498" height="45" alt="image" src="https://github.com/user-attachments/assets/581ce46f-782c-452f-ab5b-2d47ab3f74fc" />  
 Y, cuando vuelvo a correr el servidor, dejan de aparecer los errores.
 
-## 🧐🧪✍️ Experimeto 2
+### 🧐🧪✍️ Experimeto 2
 Básicamente, lo que hicimos fue comentar la línea que permite la comunicación entre las dos páginas, por lo que la página se quedará cargando por los siglos de los siglos, y no se actualizará.
 
-## 🧐🧪✍️ Experimeto 3
+### 🧐🧪✍️ Experimeto 3
 Básicamente, muestra data de este estilo constantemente:  
 <img width="632" height="77" alt="image" src="https://github.com/user-attachments/assets/4c8e1787-a942-4c71-9f6a-221bdc95f75e" />  
 Mostrando en tiempo real la data que le llega a la página 2.  
 
 
-## 🧐🧪✍️ Experimeto 4
+### 🧐🧪✍️ Experimeto 4
+
 
 
 
