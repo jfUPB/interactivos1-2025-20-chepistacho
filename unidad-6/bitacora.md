@@ -72,7 +72,15 @@ Mostrando en tiempo real la data que le llega a la página 2.
 ### 🧐🧪✍️ Experimeto 4
 
 
+## AUTOEVALUACIÓN 🐧
 
+Mi nota es de 2.7  
+Realicé dos actividades completas, y avancé bastante en las dos que no completé.  
+- **Actividad 01**: ✅ todo hecho.  
+- **Actividad 02**: ↔️ La avancé bastante, mas no la terminé. Me faltaron por completar algunas preguntas
+- **Actividad 03**: ✅ También, todo hecho.
+- **Actividad 04**: ↔️ Avancé casi todos los experimentos, pero me faltó el último.
+- **Actividad 05**: ❌ No llegué al apply 😢.
 
 
 
