@@ -14,4 +14,13 @@
 ## Actividad 02
 - Según entendí, el Dev Tunnels es una forma segura (y que nos queda a la mano) para conectar el PC y el cel, pues la conexión directa no sirve para este caso.
 - El `TouchMoved` es una función que analiza contínuamente las coordenadas del Touch en el celular, y las pasa al computador como las coordenadas del mouse. El `Treshold`es un límite que imponemos, el cual delimita qué va a considerar el programa como un movimiento que "valga la pena actualizar", evitando al programa actualizar la posición cada movimiento de un pixel.
-- 
+- Dev Tunnels nos ofrece muchas más opciones y una integración mucho más completa entre herramientas, pero si buscamos fluidez y seguridad, lo mejor será usar la IP.
+
+## Actividad 03
+- Según entendí (me tocó preguntarle a chat), el `express.static(‘public’)` sirve los archivos **estáticos** automáticamente, lo que sirve para cuando no toca modificar ni aplicar lógica personalizada a los archivos, a diferencia del `app.get(‘/ruta’, …)`, que permite una comunicación entre los archivos, con lógica de por medio.
+- Me skipeo esa otra pregunta
+- Una de dos (no tengo argumentos para ninguna): o lo recibe el primer dispositivo que conectamos (como si hubiera "agarrado el turno" primero), o lo recibirán ambos al mismo tiempo, porque, la verdad, dudo mucho que haya algún tipo de prioridad al respecto (tipo, "Solo se lo envío a este por ser computador". Eso sería medio racista).
+- De lo que recuerdo, mostraba si la pantalla estaba siendo tocada, así como la posición del touch (corroborar en casa).
+
+
+
