@@ -23,6 +23,11 @@
 - Una de dos (no tengo argumentos para ninguna): o lo recibe el primer dispositivo que conectamos (como si hubiera "agarrado el turno" primero), o lo recibirán ambos al mismo tiempo, porque, la verdad, dudo mucho que haya algún tipo de prioridad al respecto (tipo, "Solo se lo envío a este por ser computador". Eso sería medio racista).
 - De lo que recuerdo, mostraba si la pantalla estaba siendo tocada, así como la posición del touch (corroborar en casa).
 
+## Actividad 05
+Mi idea es usar la canción "Human Nature" de Michael Jackson, la cual habla sobre la vida nocturna, y hace referencia a la ciudad de Nueva York (temas que siempre me han parecido interesantes).  
+La idea de las visuales es mostrar un skyline reconocible de esta ciudad, el cual, por medio de controladores, irá cambiando su aspecto (cantidad de luces encendidas y su color), así como que irán reaccionando a la música en tiempo real. Además, dado que en una parte de la canción habla sobre el amanecer, mi idea es tener un controlador adicional para que, cuando llegue esa parte, pueda hacer una transición limpia de la noche al día.
+
+
 
 
 
