@@ -959,8 +959,16 @@ h1 {
 </html>
 ```
 
+## Autoevaluación  
+| Actividad  | Justificación  | Evidencia  |
+|---|---|---|
+| 1  | Completa, del todo  |   |
+| 2  | Me faltó adjuntar las fotos, entonces quedó muy a medias  |   |
+| 3  | Aquí me faltó responder una pregunta que, la verdad me dio pereza  |   |
+| 4  | No la hice  |   |
+| 5  | Completa, con mucha IA, pero hecha y entendida a fin de cuentas.  |   |
 
 
-
+Nota final: Dado que me faltaron un par de puntos y una actividad completa, creo que me merezco un **3,8**, que al menos esta vez hice el apply.
 
 
